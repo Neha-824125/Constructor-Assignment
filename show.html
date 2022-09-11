@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show-List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(248, 246, 246);
+        }
+
+        /* Navbar related css */
+
+        #links {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 1%;
+            box-shadow: 2px 2px 5px 5px rgb(235, 235, 235);
+        }
+
+        #links>div {
+            display: flex;
+            list-style: none;
+        }
+
+        #links a {
+            text-decoration: none;
+            color: teal;
+            font-size: 30px;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        th,
+        td {
+            padding: 15px;
+        }
+
+        tr>th {
+            background-color: teal;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Number</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody id="body"></tbody>
+        </table>
+    </main>
+</body>
+
+</html>
+<script>
+    var sArr = JSON.parse(localStorage.getItem("sData")) || [];
+
+    sArr.map(function(elem,index){
+        var row = document.createElement("tr");
+
+        var col1 = document.createElement("td");
+        col1.innerText = elem.name;
+
+        var col2 = document.createElement("td");
+        col2.innerText = elem.number;
+
+        var col3 = document.createElement("td");
+        col3.innerText = elem.city;
+
+        row.append(col1,col2,col3);
+        document.querySelector("#body").append(row);
+    })
+</script>

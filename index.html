@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+        const akbar = {
+            name : "Akbar",
+            lives : "Mumbai",
+            work : "Chef",
+            nameslive:function(names){
+           console.log(`Serving ${names} in ${this.lives}`);
+         },
+        } 
+        const amar = {
+            name : "Amar",
+            lives : "Goa",
+            work : "Singer",
+        }
+        const Anthony = {
+            name : "Anthony",
+            lives : "Kashmir",
+            work : "Magician",
+        }
+        let name = "Neha";
+
+        console.log("My Name is" + name);
+
+        console.log(`My Name is ${name}`);
+        akbar.nameslive.call(amar,"go");
+        akbar.nameslive.call(Anthony,"go");
+    
+</script>
